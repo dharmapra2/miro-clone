@@ -6,7 +6,9 @@ const authorizedParties = ["http://localhost:3000"];
 
 export default clerkMiddleware(
   (auth, request) => {
-    if (isPublicRoute(request)) auth().protect();
+    if (isPublicRoute(request)) {
+      // auth().protect();
+    }
   },
   {
     secretKey: process.env.NEXT_PUBLIC_CLERK_SECRET_KEY,
