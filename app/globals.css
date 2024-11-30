@@ -2,19 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+:root {
+  height: 100%;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --delay: 200ms;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
+} */
 body {
   color: var(--foreground);
   background: var(--background);
@@ -89,56 +93,5 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-section {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  height: 80vh;
-  width: 100%;
-  animation: format;
-  animation-timeline: view();
-}
-
-@keyframes format {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-h1 {
-  font-weight: 100;
-  font-size: 230px;
-  line-height: 230px;
-  font-variation-settings:
-    "wght" 100,
-    "wdth" 85;
-}
-
-h1 span {
-  display: inline-block;
-}
-
-h1.char span {
-  --delay: calc(var(--char-index) * 400ms);
-  animation: popUp 4000ms infinite both;
-  animation-delay: var(--delay);
-}
-
-h1:hover span {
-  animation-play-state: paused;
-}
-
-/* Animation keyframes */
-@keyframes popUp {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0.8);
   }
 }

@@ -1,7 +1,8 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   providers: [
     {
-      domain: "https://robust-beagle-814.convex.cloud",
+      domain: process.env.CLERK_JWT_ISSUER_DOMAIN,
       applicationID: "convex",
     },
   ],

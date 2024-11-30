@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/Providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
+import ConvexClientProvider from "@/components/Providers/convex-client-provider";
 
 export const metadata: Metadata = {
   title: "Miro Clone",
@@ -14,17 +15,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning={false}>
       <head />
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <ConvexClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </ConvexClientProvider>
         <Toaster />
       </body>
     </html>
