@@ -15,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={false}>
+    <html lang="en">
       <head />
-      <body>
+      <body suppressHydrationWarning>
         <ConvexClientProvider>
           <ThemeProvider
             attribute="class"
