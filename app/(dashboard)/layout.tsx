@@ -1,7 +1,7 @@
 import React from "react";
 import SideBar from "./_components/sidebar";
-import OrganizationSideBar from "./_components/org-sidebar";
 import NavBar from "./_components/navbar";
+import { OrganizationSideBar } from "./_components/org-sidebar";
 
 export default function DashboardLayout({
   children,
