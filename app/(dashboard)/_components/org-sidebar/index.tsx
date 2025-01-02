@@ -6,7 +6,6 @@ import { OrganizationSwitcher } from "@clerk/nextjs";
 import { LayoutDashboard } from "lucide-react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
-import Link from "next/link";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -15,14 +14,12 @@ const font = Poppins({
 export const OrganizationSideBar = () => {
   return (
     <div className="hidden lg:flex flex-col space-y-6 w-[206px] pl-5 pt-5">
-      <Link href="/">
-        <div className="flex items-center gap-x-2">
-          <Image src="/logo.svg" alt="Logo" height={60} width={60} />
-          <span className={cn("font-semibold text-2xl", font.className)}>
-            Board
-          </span>
-        </div>
-      </Link>
+      <div className="flex items-center gap-x-2 cursor-pointer">
+        <Image src="/logo.svg" alt="Logo" height={60} width={60} />
+        <span className={cn("font-semibold text-2xl", font.className)}>
+          Board
+        </span>
+      </div>
       <OrganizationSwitcher
         hidePersonal
         appearance={{
@@ -49,12 +46,12 @@ export const OrganizationSideBar = () => {
           variant="ghost"
           asChild
           size="lg"
-          className="font-normal justify-start px-2 w-full"
+          className="font-normal justify-start px-2 w-full cursor-pointer"
         >
-          <Link href={"/"}>
+          <div className="">
             <LayoutDashboard className="h-4 w-4 mr-2" />
             Team borads
-          </Link>
+          </div>
         </Button>
       </div>
     </div>
